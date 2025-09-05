@@ -5,7 +5,6 @@ public class GameManager : MonoBehaviour
 {
     public static float platformSpeed = 4f; // shared speed
     public float increment = 0.2f;           // speed increase per second
-    public float maxSpeed = 10f;
 
     private void Start()
     {
@@ -14,8 +13,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (platformSpeed < maxSpeed)
-        {
+        if (platformSpeed < 10)
+        { 
             platformSpeed += increment * Time.deltaTime;
         }
     }
