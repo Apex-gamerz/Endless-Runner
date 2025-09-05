@@ -1,13 +1,15 @@
-// Movement.cs
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
     void Update()
     {
-        transform.position -= new Vector3(0, 0, GameManager.platformSpeed * Time.deltaTime);
+        // Move ground backwards
+        transform.position -= new Vector3(0, 0, Game_Manager.speed * Time.deltaTime);
 
-        if (transform.position.z <= -60f)
+        // Destroy when ground moves too far back
+        if (transform.position.z < -65f)
         {
             Destroy(gameObject);
         }
